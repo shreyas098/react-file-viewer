@@ -25,10 +25,6 @@ module.exports = {
     filename: 'app/js/[name].bundle.js',
     publicPath: '/',
   },
-  // resolve: {
-  //   modules: [path.resolve(__dirname, 'src'), path.resolve(__dirname, 'example_files'), 'node_modules'],
-  //   extensions: ['.js', '.json', '.jsx'],
-  // },
   resolve: {
     extensions: ['.js', '.json', '.jsx'],
     modules: [

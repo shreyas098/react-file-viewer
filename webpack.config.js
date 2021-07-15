@@ -16,8 +16,19 @@ const config = {
     libraryTarget: 'umd',
   },
   resolve: {
-    modules: [path.resolve(__dirname, './src'), 'node_modules'],
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.json', '.jsx'],
+    modules: [
+        path.join(__dirname, 'node_modules')
+    ],
+    alias: {
+      "react/jsx-dev-runtime": "react/jsx-dev-runtime.js",
+      "react/jsx-runtime": "react/jsx-runtime.js"
+    },
+    fallback: {
+      "util": require.resolve('util'),
+      "path": false,
+      "stream": require.resolve('stream-browserify')
+    }
   },
   externals: [
     {
@@ -58,18 +69,6 @@ const config = {
           },
           {
             loader: 'postcss-loader',
-            options: {
-              ident: 'postcss'
-              // plugins: () => [
-              //   autoprefixer({
-              //     browsers: [
-              //       '>1%',
-              //       'last 4 versions',
-              //       'not ie < 9',
-              //     ],
-              //   }),
-              // ],
-            },
           },
           {
             loader: 'sass-loader',
