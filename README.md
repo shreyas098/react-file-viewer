@@ -17,7 +17,12 @@ Extendable file viewer for web
 
 This is a fork of PlanGrid's react-file-viewer. It appears that PlanGrid have decided to not maintain their version, as there are numerous pull requests and bugs open
 that have not been addressed. Therefore the only course of action is to fork. I would have preferred to have submitted this back to them. Pretty much this is just an
-upgrade of their version using all the latest packages. The number of vulnerability warnings the current PlanGrid is generating left no choice but to fork. 
+upgrade of their version using all the latest packages. The number of vulnerability warnings the current PlanGrid is generating left no choice but to fork.
+
+## Fix of pdf issue in nuzz78/react-file-viewer
+`Changes made`
+1) Removed controls of download for audio and video
+2) Fixed pdf worker error of react-pdf
 
 ## Usage
 

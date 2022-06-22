@@ -1,15 +1,13 @@
 // Copyright (c) 2017 PlanGrid, Inc.
 
 import React, {useState} from 'react';
-// import VisibilitySensor from 'react-visibility-sensor';
 
 import { Document, Page } from 'react-pdf';
 import { pdfjs } from 'react-pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = '../node_modules/pdfjs-dist/build/pdf.worker.min.js';
+pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@2.6.347/build/pdf.worker.min.js';
 
 function PDFDriver(props) {
   const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
 
   function onDocumentLoadSuccess({ numPages }) {
     setNumPages(numPages);
@@ -21,9 +19,10 @@ function PDFDriver(props) {
         file={props.filePath}
         onLoadSuccess={onDocumentLoadSuccess}
       >
-        <Page pageNumber={pageNumber} />
+        {Array.apply(null, Array(numPages))
+         .map((x, i)=>i+1)
+          .map(page => <Page pageNumber={page}/>)}
       </Document>
-      <p>Page {pageNumber} of {numPages}</p>
     </div>
   );
 }

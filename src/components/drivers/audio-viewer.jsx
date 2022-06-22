@@ -33,6 +33,7 @@ class AudioViewer extends Component {
           <audio
             style={{ visibility }}
             controls
+            controlsList="nodownload"
             onCanPlay={e => this.onCanPlay(e)}
             src={this.props.filePath}
           >
