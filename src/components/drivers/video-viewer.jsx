@@ -33,6 +33,7 @@ class VideoViewer extends Component {
           <video
             style={{ visibility }}
             controls
+            disablePictureInPicture
             controlsList="nodownload nofullscreen noremoteplayback"
             type={`video/${this.props.fileType}`}
             onCanPlay={e => this.onCanPlay(e)}
