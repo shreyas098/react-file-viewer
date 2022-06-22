@@ -16,6 +16,7 @@ exports[`AudioViewer matches snapshot 1`] = `
     </div>
     <audio
       controls={true}
+      controlsList="nodownload"
       onCanPlay={[Function]}
       src="fake/path"
       style={
